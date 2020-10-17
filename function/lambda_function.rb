@@ -49,7 +49,16 @@ def lambda_handler(event:, context:)
 
   #context_items = methods.map { |m| { m => context.send(m) } }
 
-  { statusCode: 200, body: JSON.generate(response(query)) } #.merge({ event: event, context: context_items })) }
+  #.merge({ event: event, context: context_items })) }
+  {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Headers" => "Content-Type",
+      "Access-Control-Allow-Origin" => "*",
+      "Access-Control-Allow-Methods" => "GET"
+    },
+    body: JSON.generate(response(query)),
+  }
 end
 
 def response(query)
