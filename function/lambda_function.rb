@@ -3,6 +3,8 @@
 # Returns
 # card: "5♥"
 # https://8x16jr2jii.execute-api.us-east-1.amazonaws.com/dev/some-lambda-thing?action=dealHands&number=5
+# Via API Gateway
+# https://8x16jr2jii.execute-api.us-east-1.amazonaws.com/dev/index.html
 
 require 'aws-sdk'
 require 'json'
